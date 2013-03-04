@@ -11,9 +11,7 @@
 
 #import "NSDictionary+Parameters.h"
 
-#ifndef IS_MAC_OS_X
-#import "UIApplication+ActivityIndicator.h"
-#endif
+#import "HNNetworkActivityController.h"
 
 @implementation HNAPIRequest
 
@@ -32,9 +30,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection_ didFailWithError:(NSError *)error {
-#ifndef IS_MAC_OS_X
-    [[UIApplication sharedApplication] releaseNetworkActivityIndicator];
-#endif
+    [HNNetworkActivityController networkActivityEnded];
     [connection release];
     connection = nil;
     
@@ -85,9 +81,7 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection_ {
-#ifndef IS_MAC_OS_X
-    [[UIApplication sharedApplication] releaseNetworkActivityIndicator];
-#endif
+    [HNNetworkActivityController networkActivityEnded];
     [connection release];
     connection = nil;
 
@@ -107,9 +101,7 @@
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [connection start];
 
-#ifndef IS_MAC_OS_X
-    [[UIApplication sharedApplication] retainNetworkActivityIndicator];
-#endif
+    [HNNetworkActivityController networkActivityBegan];
 }
 
 - (BOOL)isLoading {
@@ -118,9 +110,7 @@
 
 - (void)cancelRequest {
     if (connection != nil) {
-#ifndef IS_MAC_OS_X
-        [[UIApplication sharedApplication] releaseNetworkActivityIndicator];
-#endif
+        [HNNetworkActivityController networkActivityEnded];
         [connection cancel];
         [connection release];
         connection = nil;

@@ -31,7 +31,6 @@
 		7D563FB016E452B800BDD2DB /* XMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F9B16E452B800BDD2DB /* XMLElement.m */; };
 		7D563FB316E4531700BDD2DB /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563FB216E4531700BDD2DB /* NSString+URLEncoding.m */; };
 		7D563FB616E4532B00BDD2DB /* NSDictionary+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563FB516E4532B00BDD2DB /* NSDictionary+Parameters.m */; };
-		7D563FBA16E453D100BDD2DB /* UIApplication+ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563FB916E453D100BDD2DB /* UIApplication+ActivityIndicator.m */; };
 		7D563FBE16E453E000BDD2DB /* NSString+Entities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563FBB16E453E000BDD2DB /* NSString+Entities.m */; };
 		7D563FBF16E453E000BDD2DB /* NSString+Tags.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563FBD16E453E000BDD2DB /* NSString+Tags.m */; };
 		7D563FCE16E454C400BDD2DB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D563FCD16E454C400BDD2DB /* CoreText.framework */; };
@@ -54,6 +53,15 @@
 		7D563FE116E4562100BDD2DB /* HNShared.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F9216E452B800BDD2DB /* HNShared.h */; };
 		7D563FE216E4564100BDD2DB /* HNAPIRequestParser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F7916E452B800BDD2DB /* HNAPIRequestParser.h */; };
 		7D563FE316E4564100BDD2DB /* HNObjectCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F8A16E452B800BDD2DB /* HNObjectCache.h */; };
+		7D563FE716E457E900BDD2DB /* HNNetworkActivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563FE616E457E900BDD2DB /* HNNetworkActivityController.m */; };
+		7D563FE816E4596400BDD2DB /* NSString+Tags.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563FBC16E453E000BDD2DB /* NSString+Tags.h */; };
+		7D563FE916E4596400BDD2DB /* NSString+Entities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563FB716E4533800BDD2DB /* NSString+Entities.h */; };
+		7D563FEA16E4596400BDD2DB /* NSDictionary+Parameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563FB416E4532B00BDD2DB /* NSDictionary+Parameters.h */; };
+		7D563FEB16E4596400BDD2DB /* NSString+URLEncoding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563FB116E4531700BDD2DB /* NSString+URLEncoding.h */; };
+		7D563FEC16E4596400BDD2DB /* NSObject+PerformSelector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F6E16E452B800BDD2DB /* NSObject+PerformSelector.h */; };
+		7D563FED16E4596400BDD2DB /* NSString+RemoveSuffix.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F7016E452B800BDD2DB /* NSString+RemoveSuffix.h */; };
+		7D563FEE16E4596400BDD2DB /* NSURL+Parameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F7216E452B800BDD2DB /* NSURL+Parameters.h */; };
+		7D563FEF16E4596400BDD2DB /* HNNetworkActivityController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563FE516E457E900BDD2DB /* HNNetworkActivityController.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +80,14 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				7D563FE816E4596400BDD2DB /* NSString+Tags.h in CopyFiles */,
+				7D563FE916E4596400BDD2DB /* NSString+Entities.h in CopyFiles */,
+				7D563FEA16E4596400BDD2DB /* NSDictionary+Parameters.h in CopyFiles */,
+				7D563FEB16E4596400BDD2DB /* NSString+URLEncoding.h in CopyFiles */,
+				7D563FEC16E4596400BDD2DB /* NSObject+PerformSelector.h in CopyFiles */,
+				7D563FED16E4596400BDD2DB /* NSString+RemoveSuffix.h in CopyFiles */,
+				7D563FEE16E4596400BDD2DB /* NSURL+Parameters.h in CopyFiles */,
+				7D563FEF16E4596400BDD2DB /* HNNetworkActivityController.h in CopyFiles */,
 				7D563FE216E4564100BDD2DB /* HNAPIRequestParser.h in CopyFiles */,
 				7D563FE316E4564100BDD2DB /* HNObjectCache.h in CopyFiles */,
 				7D563FE116E4562100BDD2DB /* HNShared.h in CopyFiles */,
@@ -147,13 +163,13 @@
 		7D563FB416E4532B00BDD2DB /* NSDictionary+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Parameters.h"; sourceTree = "<group>"; };
 		7D563FB516E4532B00BDD2DB /* NSDictionary+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Parameters.m"; sourceTree = "<group>"; };
 		7D563FB716E4533800BDD2DB /* NSString+Entities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Entities.h"; sourceTree = "<group>"; };
-		7D563FB816E453D100BDD2DB /* UIApplication+ActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ActivityIndicator.h"; sourceTree = "<group>"; };
-		7D563FB916E453D100BDD2DB /* UIApplication+ActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ActivityIndicator.m"; sourceTree = "<group>"; };
 		7D563FBB16E453E000BDD2DB /* NSString+Entities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Entities.m"; sourceTree = "<group>"; };
 		7D563FBC16E453E000BDD2DB /* NSString+Tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tags.h"; sourceTree = "<group>"; };
 		7D563FBD16E453E000BDD2DB /* NSString+Tags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tags.m"; sourceTree = "<group>"; };
 		7D563FCD16E454C400BDD2DB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		7D563FCF16E454C900BDD2DB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		7D563FE516E457E900BDD2DB /* HNNetworkActivityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNNetworkActivityController.h; sourceTree = "<group>"; };
+		7D563FE616E457E900BDD2DB /* HNNetworkActivityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNNetworkActivityController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,8 +228,6 @@
 			children = (
 				7D563FBC16E453E000BDD2DB /* NSString+Tags.h */,
 				7D563FBD16E453E000BDD2DB /* NSString+Tags.m */,
-				7D563FB816E453D100BDD2DB /* UIApplication+ActivityIndicator.h */,
-				7D563FB916E453D100BDD2DB /* UIApplication+ActivityIndicator.m */,
 				7D563FB716E4533800BDD2DB /* NSString+Entities.h */,
 				7D563FBB16E453E000BDD2DB /* NSString+Entities.m */,
 				7D563FB416E4532B00BDD2DB /* NSDictionary+Parameters.h */,
@@ -235,6 +249,8 @@
 			children = (
 				7D563F8516E452B800BDD2DB /* HNKit.h */,
 				7D563F9216E452B800BDD2DB /* HNShared.h */,
+				7D563FE516E457E900BDD2DB /* HNNetworkActivityController.h */,
+				7D563FE616E457E900BDD2DB /* HNNetworkActivityController.m */,
 				7D563F7516E452B800BDD2DB /* HNAnonymousSession.h */,
 				7D563F7616E452B800BDD2DB /* HNAnonymousSession.m */,
 				7D563F7716E452B800BDD2DB /* HNAPIRequest.h */,
@@ -357,9 +373,9 @@
 				7D563FB016E452B800BDD2DB /* XMLElement.m in Sources */,
 				7D563FB316E4531700BDD2DB /* NSString+URLEncoding.m in Sources */,
 				7D563FB616E4532B00BDD2DB /* NSDictionary+Parameters.m in Sources */,
-				7D563FBA16E453D100BDD2DB /* UIApplication+ActivityIndicator.m in Sources */,
 				7D563FBE16E453E000BDD2DB /* NSString+Entities.m in Sources */,
 				7D563FBF16E453E000BDD2DB /* NSString+Tags.m in Sources */,
+				7D563FE716E457E900BDD2DB /* HNNetworkActivityController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

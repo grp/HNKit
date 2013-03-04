@@ -8,14 +8,11 @@
 
 #import "HNKit.h"
 #import "HNSessionAuthenticator.h"
+#import "HNNetworkActivityController.h"
 
 #import "XMLDocument.h"
 
 #import "NSDictionary+Parameters.h"
-
-#ifndef IS_MAC_OS_X
-#import "UIApplication+ActivityIndicator.h"
-#endif
 
 #define kHNLoginSubmissionURL [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [kHNWebsiteURL absoluteString], @"y"]]
 
@@ -54,9 +51,7 @@
 
 - (void)_clearConnection {
     if (connection != nil) {
-#ifndef IS_MAC_OS_X
-        [[UIApplication sharedApplication] releaseNetworkActivityIndicator];
-#endif
+        [HNNetworkActivityController networkActivityEnded];
         [connection release];
         connection = nil;
     }
@@ -124,9 +119,7 @@
 - (void)_sendAuthenticationRequest:(NSURLRequest *)request {
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [connection start];
-#ifndef IS_MAC_OS_X
-    [[UIApplication sharedApplication] retainNetworkActivityIndicator];
-#endif
+    [HNNetworkActivityController networkActivityBegan];
 }
 
 - (void)_performAuthentication {
