@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D563E5416E4501E00BDD2DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D563E5316E4501E00BDD2DB /* Foundation.framework */; };
+		7D563F9C16E452B800BDD2DB /* NSObject+PerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F6F16E452B800BDD2DB /* NSObject+PerformSelector.m */; };
+		7D563F9D16E452B800BDD2DB /* NSString+RemoveSuffix.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F7116E452B800BDD2DB /* NSString+RemoveSuffix.m */; };
+		7D563F9E16E452B800BDD2DB /* NSURL+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F7316E452B800BDD2DB /* NSURL+Parameters.m */; };
+		7D563F9F16E452B800BDD2DB /* HNAnonymousSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F7616E452B800BDD2DB /* HNAnonymousSession.m */; };
+		7D563FA016E452B800BDD2DB /* HNAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F7816E452B800BDD2DB /* HNAPIRequest.m */; };
+		7D563FA116E452B800BDD2DB /* HNAPIRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F7A16E452B800BDD2DB /* HNAPIRequestParser.m */; };
+		7D563FA216E452B800BDD2DB /* HNAPISearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F7C16E452B800BDD2DB /* HNAPISearch.m */; };
+		7D563FA316E452B800BDD2DB /* HNAPISubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F7E16E452B800BDD2DB /* HNAPISubmission.m */; };
+		7D563FA416E452B800BDD2DB /* HNContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F8016E452B800BDD2DB /* HNContainer.m */; };
+		7D563FA516E452B800BDD2DB /* HNEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F8216E452B800BDD2DB /* HNEntry.m */; };
+		7D563FA616E452B800BDD2DB /* HNEntryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F8416E452B800BDD2DB /* HNEntryList.m */; };
+		7D563FA716E452B800BDD2DB /* HNObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F8716E452B800BDD2DB /* HNObject.m */; };
+		7D563FA816E452B800BDD2DB /* HNObjectBodyRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F8916E452B800BDD2DB /* HNObjectBodyRenderer.m */; };
+		7D563FA916E452B800BDD2DB /* HNObjectCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F8B16E452B800BDD2DB /* HNObjectCache.m */; };
+		7D563FAA16E452B800BDD2DB /* HNSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F8D16E452B800BDD2DB /* HNSession.m */; };
+		7D563FAB16E452B800BDD2DB /* HNSessionAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F8F16E452B800BDD2DB /* HNSessionAuthenticator.m */; };
+		7D563FAC16E452B800BDD2DB /* HNSessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F9116E452B800BDD2DB /* HNSessionController.m */; };
+		7D563FAD16E452B800BDD2DB /* HNSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F9416E452B800BDD2DB /* HNSubmission.m */; };
+		7D563FAE16E452B800BDD2DB /* HNUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F9616E452B800BDD2DB /* HNUser.m */; };
+		7D563FAF16E452B800BDD2DB /* XMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F9916E452B800BDD2DB /* XMLDocument.m */; };
+		7D563FB016E452B800BDD2DB /* XMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F9B16E452B800BDD2DB /* XMLElement.m */; };
+		7D563FB316E4531700BDD2DB /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563FB216E4531700BDD2DB /* NSString+URLEncoding.m */; };
+		7D563FB616E4532B00BDD2DB /* NSDictionary+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563FB516E4532B00BDD2DB /* NSDictionary+Parameters.m */; };
+		7D563FBA16E453D100BDD2DB /* UIApplication+ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563FB916E453D100BDD2DB /* UIApplication+ActivityIndicator.m */; };
+		7D563FBE16E453E000BDD2DB /* NSString+Entities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563FBB16E453E000BDD2DB /* NSString+Entities.m */; };
+		7D563FBF16E453E000BDD2DB /* NSString+Tags.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563FBD16E453E000BDD2DB /* NSString+Tags.m */; };
+		7D563FCE16E454C400BDD2DB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D563FCD16E454C400BDD2DB /* CoreText.framework */; };
+		7D563FD016E454C900BDD2DB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D563FCF16E454C900BDD2DB /* libxml2.dylib */; };
+		7D563FD216E455A900BDD2DB /* HNKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F8516E452B800BDD2DB /* HNKit.h */; };
+		7D563FD316E455C900BDD2DB /* HNAnonymousSession.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F7516E452B800BDD2DB /* HNAnonymousSession.h */; };
+		7D563FD416E455C900BDD2DB /* HNAPIRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F7716E452B800BDD2DB /* HNAPIRequest.h */; };
+		7D563FD516E455C900BDD2DB /* HNAPISearch.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F7B16E452B800BDD2DB /* HNAPISearch.h */; };
+		7D563FD616E455C900BDD2DB /* HNAPISubmission.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F7D16E452B800BDD2DB /* HNAPISubmission.h */; };
+		7D563FD716E455C900BDD2DB /* HNContainer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F7F16E452B800BDD2DB /* HNContainer.h */; };
+		7D563FD816E455C900BDD2DB /* HNEntry.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F8116E452B800BDD2DB /* HNEntry.h */; };
+		7D563FD916E455C900BDD2DB /* HNEntryList.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F8316E452B800BDD2DB /* HNEntryList.h */; };
+		7D563FDA16E455C900BDD2DB /* HNObject.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F8616E452B800BDD2DB /* HNObject.h */; };
+		7D563FDB16E455C900BDD2DB /* HNObjectBodyRenderer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F8816E452B800BDD2DB /* HNObjectBodyRenderer.h */; };
+		7D563FDC16E455C900BDD2DB /* HNSession.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F8C16E452B800BDD2DB /* HNSession.h */; };
+		7D563FDD16E455C900BDD2DB /* HNSessionAuthenticator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F8E16E452B800BDD2DB /* HNSessionAuthenticator.h */; };
+		7D563FDE16E455C900BDD2DB /* HNSessionController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F9016E452B800BDD2DB /* HNSessionController.h */; };
+		7D563FDF16E455C900BDD2DB /* HNSubmission.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F9316E452B800BDD2DB /* HNSubmission.h */; };
+		7D563FE016E455C900BDD2DB /* HNUser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F9516E452B800BDD2DB /* HNUser.h */; };
+		7D563FE116E4562100BDD2DB /* HNShared.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F9216E452B800BDD2DB /* HNShared.h */; };
+		7D563FE216E4564100BDD2DB /* HNAPIRequestParser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F7916E452B800BDD2DB /* HNAPIRequestParser.h */; };
+		7D563FE316E4564100BDD2DB /* HNObjectCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D563F8A16E452B800BDD2DB /* HNObjectCache.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7D563E4E16E4501E00BDD2DB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D563FD116E4559000BDD2DB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				7D563FE216E4564100BDD2DB /* HNAPIRequestParser.h in CopyFiles */,
+				7D563FE316E4564100BDD2DB /* HNObjectCache.h in CopyFiles */,
+				7D563FE116E4562100BDD2DB /* HNShared.h in CopyFiles */,
+				7D563FD316E455C900BDD2DB /* HNAnonymousSession.h in CopyFiles */,
+				7D563FD416E455C900BDD2DB /* HNAPIRequest.h in CopyFiles */,
+				7D563FD516E455C900BDD2DB /* HNAPISearch.h in CopyFiles */,
+				7D563FD616E455C900BDD2DB /* HNAPISubmission.h in CopyFiles */,
+				7D563FD716E455C900BDD2DB /* HNContainer.h in CopyFiles */,
+				7D563FD816E455C900BDD2DB /* HNEntry.h in CopyFiles */,
+				7D563FD916E455C900BDD2DB /* HNEntryList.h in CopyFiles */,
+				7D563FDA16E455C900BDD2DB /* HNObject.h in CopyFiles */,
+				7D563FDB16E455C900BDD2DB /* HNObjectBodyRenderer.h in CopyFiles */,
+				7D563FDC16E455C900BDD2DB /* HNSession.h in CopyFiles */,
+				7D563FDD16E455C900BDD2DB /* HNSessionAuthenticator.h in CopyFiles */,
+				7D563FDE16E455C900BDD2DB /* HNSessionController.h in CopyFiles */,
+				7D563FDF16E455C900BDD2DB /* HNSubmission.h in CopyFiles */,
+				7D563FE016E455C900BDD2DB /* HNUser.h in CopyFiles */,
+				7D563FD216E455A900BDD2DB /* HNKit.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7D563E5016E4501E00BDD2DB /* libHNKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHNKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D563E5316E4501E00BDD2DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7D563F6E16E452B800BDD2DB /* NSObject+PerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformSelector.h"; sourceTree = "<group>"; };
+		7D563F6F16E452B800BDD2DB /* NSObject+PerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformSelector.m"; sourceTree = "<group>"; };
+		7D563F7016E452B800BDD2DB /* NSString+RemoveSuffix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RemoveSuffix.h"; sourceTree = "<group>"; };
+		7D563F7116E452B800BDD2DB /* NSString+RemoveSuffix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RemoveSuffix.m"; sourceTree = "<group>"; };
+		7D563F7216E452B800BDD2DB /* NSURL+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Parameters.h"; sourceTree = "<group>"; };
+		7D563F7316E452B800BDD2DB /* NSURL+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Parameters.m"; sourceTree = "<group>"; };
+		7D563F7516E452B800BDD2DB /* HNAnonymousSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNAnonymousSession.h; sourceTree = "<group>"; };
+		7D563F7616E452B800BDD2DB /* HNAnonymousSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNAnonymousSession.m; sourceTree = "<group>"; };
+		7D563F7716E452B800BDD2DB /* HNAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNAPIRequest.h; sourceTree = "<group>"; };
+		7D563F7816E452B800BDD2DB /* HNAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNAPIRequest.m; sourceTree = "<group>"; };
+		7D563F7916E452B800BDD2DB /* HNAPIRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNAPIRequestParser.h; sourceTree = "<group>"; };
+		7D563F7A16E452B800BDD2DB /* HNAPIRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNAPIRequestParser.m; sourceTree = "<group>"; };
+		7D563F7B16E452B800BDD2DB /* HNAPISearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNAPISearch.h; sourceTree = "<group>"; };
+		7D563F7C16E452B800BDD2DB /* HNAPISearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNAPISearch.m; sourceTree = "<group>"; };
+		7D563F7D16E452B800BDD2DB /* HNAPISubmission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNAPISubmission.h; sourceTree = "<group>"; };
+		7D563F7E16E452B800BDD2DB /* HNAPISubmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNAPISubmission.m; sourceTree = "<group>"; };
+		7D563F7F16E452B800BDD2DB /* HNContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNContainer.h; sourceTree = "<group>"; };
+		7D563F8016E452B800BDD2DB /* HNContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNContainer.m; sourceTree = "<group>"; };
+		7D563F8116E452B800BDD2DB /* HNEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNEntry.h; sourceTree = "<group>"; };
+		7D563F8216E452B800BDD2DB /* HNEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNEntry.m; sourceTree = "<group>"; };
+		7D563F8316E452B800BDD2DB /* HNEntryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNEntryList.h; sourceTree = "<group>"; };
+		7D563F8416E452B800BDD2DB /* HNEntryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNEntryList.m; sourceTree = "<group>"; };
+		7D563F8516E452B800BDD2DB /* HNKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKit.h; sourceTree = "<group>"; };
+		7D563F8616E452B800BDD2DB /* HNObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNObject.h; sourceTree = "<group>"; };
+		7D563F8716E452B800BDD2DB /* HNObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNObject.m; sourceTree = "<group>"; };
+		7D563F8816E452B800BDD2DB /* HNObjectBodyRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNObjectBodyRenderer.h; sourceTree = "<group>"; };
+		7D563F8916E452B800BDD2DB /* HNObjectBodyRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNObjectBodyRenderer.m; sourceTree = "<group>"; };
+		7D563F8A16E452B800BDD2DB /* HNObjectCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNObjectCache.h; sourceTree = "<group>"; };
+		7D563F8B16E452B800BDD2DB /* HNObjectCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNObjectCache.m; sourceTree = "<group>"; };
+		7D563F8C16E452B800BDD2DB /* HNSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSession.h; sourceTree = "<group>"; };
+		7D563F8D16E452B800BDD2DB /* HNSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSession.m; sourceTree = "<group>"; };
+		7D563F8E16E452B800BDD2DB /* HNSessionAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSessionAuthenticator.h; sourceTree = "<group>"; };
+		7D563F8F16E452B800BDD2DB /* HNSessionAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSessionAuthenticator.m; sourceTree = "<group>"; };
+		7D563F9016E452B800BDD2DB /* HNSessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSessionController.h; sourceTree = "<group>"; };
+		7D563F9116E452B800BDD2DB /* HNSessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSessionController.m; sourceTree = "<group>"; };
+		7D563F9216E452B800BDD2DB /* HNShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNShared.h; sourceTree = "<group>"; };
+		7D563F9316E452B800BDD2DB /* HNSubmission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSubmission.h; sourceTree = "<group>"; };
+		7D563F9416E452B800BDD2DB /* HNSubmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSubmission.m; sourceTree = "<group>"; };
+		7D563F9516E452B800BDD2DB /* HNUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNUser.h; sourceTree = "<group>"; };
+		7D563F9616E452B800BDD2DB /* HNUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNUser.m; sourceTree = "<group>"; };
+		7D563F9816E452B800BDD2DB /* XMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDocument.h; sourceTree = "<group>"; };
+		7D563F9916E452B800BDD2DB /* XMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDocument.m; sourceTree = "<group>"; };
+		7D563F9A16E452B800BDD2DB /* XMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLElement.h; sourceTree = "<group>"; };
+		7D563F9B16E452B800BDD2DB /* XMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLElement.m; sourceTree = "<group>"; };
+		7D563FB116E4531700BDD2DB /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		7D563FB216E4531700BDD2DB /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		7D563FB416E4532B00BDD2DB /* NSDictionary+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Parameters.h"; sourceTree = "<group>"; };
+		7D563FB516E4532B00BDD2DB /* NSDictionary+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Parameters.m"; sourceTree = "<group>"; };
+		7D563FB716E4533800BDD2DB /* NSString+Entities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Entities.h"; sourceTree = "<group>"; };
+		7D563FB816E453D100BDD2DB /* UIApplication+ActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ActivityIndicator.h"; sourceTree = "<group>"; };
+		7D563FB916E453D100BDD2DB /* UIApplication+ActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ActivityIndicator.m"; sourceTree = "<group>"; };
+		7D563FBB16E453E000BDD2DB /* NSString+Entities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Entities.m"; sourceTree = "<group>"; };
+		7D563FBC16E453E000BDD2DB /* NSString+Tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tags.h"; sourceTree = "<group>"; };
+		7D563FBD16E453E000BDD2DB /* NSString+Tags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tags.m"; sourceTree = "<group>"; };
+		7D563FCD16E454C400BDD2DB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		7D563FCF16E454C900BDD2DB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D563E4D16E4501E00BDD2DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D563FD016E454C900BDD2DB /* libxml2.dylib in Frameworks */,
+				7D563FCE16E454C400BDD2DB /* CoreText.framework in Frameworks */,
+				7D563E5416E4501E00BDD2DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D563E4716E4501E00BDD2DB = {
+			isa = PBXGroup;
+			children = (
+				7D563F6C16E452B800BDD2DB /* Classes */,
+				7D563E5216E4501E00BDD2DB /* Frameworks */,
+				7D563E5116E4501E00BDD2DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D563E5116E4501E00BDD2DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D563E5016E4501E00BDD2DB /* libHNKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D563E5216E4501E00BDD2DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D563FCF16E454C900BDD2DB /* libxml2.dylib */,
+				7D563FCD16E454C400BDD2DB /* CoreText.framework */,
+				7D563E5316E4501E00BDD2DB /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D563F6C16E452B800BDD2DB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7D563F6D16E452B800BDD2DB /* Categories */,
+				7D563F9716E452B800BDD2DB /* XML */,
+				7D563F7416E452B800BDD2DB /* HNKit */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7D563F6D16E452B800BDD2DB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7D563FBC16E453E000BDD2DB /* NSString+Tags.h */,
+				7D563FBD16E453E000BDD2DB /* NSString+Tags.m */,
+				7D563FB816E453D100BDD2DB /* UIApplication+ActivityIndicator.h */,
+				7D563FB916E453D100BDD2DB /* UIApplication+ActivityIndicator.m */,
+				7D563FB716E4533800BDD2DB /* NSString+Entities.h */,
+				7D563FBB16E453E000BDD2DB /* NSString+Entities.m */,
+				7D563FB416E4532B00BDD2DB /* NSDictionary+Parameters.h */,
+				7D563FB516E4532B00BDD2DB /* NSDictionary+Parameters.m */,
+				7D563FB116E4531700BDD2DB /* NSString+URLEncoding.h */,
+				7D563FB216E4531700BDD2DB /* NSString+URLEncoding.m */,
+				7D563F6E16E452B800BDD2DB /* NSObject+PerformSelector.h */,
+				7D563F6F16E452B800BDD2DB /* NSObject+PerformSelector.m */,
+				7D563F7016E452B800BDD2DB /* NSString+RemoveSuffix.h */,
+				7D563F7116E452B800BDD2DB /* NSString+RemoveSuffix.m */,
+				7D563F7216E452B800BDD2DB /* NSURL+Parameters.h */,
+				7D563F7316E452B800BDD2DB /* NSURL+Parameters.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		7D563F7416E452B800BDD2DB /* HNKit */ = {
+			isa = PBXGroup;
+			children = (
+				7D563F8516E452B800BDD2DB /* HNKit.h */,
+				7D563F9216E452B800BDD2DB /* HNShared.h */,
+				7D563F7516E452B800BDD2DB /* HNAnonymousSession.h */,
+				7D563F7616E452B800BDD2DB /* HNAnonymousSession.m */,
+				7D563F7716E452B800BDD2DB /* HNAPIRequest.h */,
+				7D563F7816E452B800BDD2DB /* HNAPIRequest.m */,
+				7D563F7916E452B800BDD2DB /* HNAPIRequestParser.h */,
+				7D563F7A16E452B800BDD2DB /* HNAPIRequestParser.m */,
+				7D563F7B16E452B800BDD2DB /* HNAPISearch.h */,
+				7D563F7C16E452B800BDD2DB /* HNAPISearch.m */,
+				7D563F7D16E452B800BDD2DB /* HNAPISubmission.h */,
+				7D563F7E16E452B800BDD2DB /* HNAPISubmission.m */,
+				7D563F7F16E452B800BDD2DB /* HNContainer.h */,
+				7D563F8016E452B800BDD2DB /* HNContainer.m */,
+				7D563F8116E452B800BDD2DB /* HNEntry.h */,
+				7D563F8216E452B800BDD2DB /* HNEntry.m */,
+				7D563F8316E452B800BDD2DB /* HNEntryList.h */,
+				7D563F8416E452B800BDD2DB /* HNEntryList.m */,
+				7D563F8616E452B800BDD2DB /* HNObject.h */,
+				7D563F8716E452B800BDD2DB /* HNObject.m */,
+				7D563F8816E452B800BDD2DB /* HNObjectBodyRenderer.h */,
+				7D563F8916E452B800BDD2DB /* HNObjectBodyRenderer.m */,
+				7D563F8A16E452B800BDD2DB /* HNObjectCache.h */,
+				7D563F8B16E452B800BDD2DB /* HNObjectCache.m */,
+				7D563F8C16E452B800BDD2DB /* HNSession.h */,
+				7D563F8D16E452B800BDD2DB /* HNSession.m */,
+				7D563F8E16E452B800BDD2DB /* HNSessionAuthenticator.h */,
+				7D563F8F16E452B800BDD2DB /* HNSessionAuthenticator.m */,
+				7D563F9016E452B800BDD2DB /* HNSessionController.h */,
+				7D563F9116E452B800BDD2DB /* HNSessionController.m */,
+				7D563F9316E452B800BDD2DB /* HNSubmission.h */,
+				7D563F9416E452B800BDD2DB /* HNSubmission.m */,
+				7D563F9516E452B800BDD2DB /* HNUser.h */,
+				7D563F9616E452B800BDD2DB /* HNUser.m */,
+			);
+			path = HNKit;
+			sourceTree = "<group>";
+		};
+		7D563F9716E452B800BDD2DB /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				7D563F9816E452B800BDD2DB /* XMLDocument.h */,
+				7D563F9916E452B800BDD2DB /* XMLDocument.m */,
+				7D563F9A16E452B800BDD2DB /* XMLElement.h */,
+				7D563F9B16E452B800BDD2DB /* XMLElement.m */,
+			);
+			path = XML;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D563E4F16E4501E00BDD2DB /* HNKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D563E5E16E4501E00BDD2DB /* Build configuration list for PBXNativeTarget "HNKit" */;
+			buildPhases = (
+				7D563E4C16E4501E00BDD2DB /* Sources */,
+				7D563E4D16E4501E00BDD2DB /* Frameworks */,
+				7D563E4E16E4501E00BDD2DB /* CopyFiles */,
+				7D563FD116E4559000BDD2DB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HNKit;
+			productName = HNKit;
+			productReference = 7D563E5016E4501E00BDD2DB /* libHNKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D563E4816E4501E00BDD2DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Xuzz Productions, LLC";
+			};
+			buildConfigurationList = 7D563E4B16E4501E00BDD2DB /* Build configuration list for PBXProject "HNKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7D563E4716E4501E00BDD2DB;
+			productRefGroup = 7D563E5116E4501E00BDD2DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D563E4F16E4501E00BDD2DB /* HNKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D563E4C16E4501E00BDD2DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D563F9C16E452B800BDD2DB /* NSObject+PerformSelector.m in Sources */,
+				7D563F9D16E452B800BDD2DB /* NSString+RemoveSuffix.m in Sources */,
+				7D563F9E16E452B800BDD2DB /* NSURL+Parameters.m in Sources */,
+				7D563F9F16E452B800BDD2DB /* HNAnonymousSession.m in Sources */,
+				7D563FA016E452B800BDD2DB /* HNAPIRequest.m in Sources */,
+				7D563FA116E452B800BDD2DB /* HNAPIRequestParser.m in Sources */,
+				7D563FA216E452B800BDD2DB /* HNAPISearch.m in Sources */,
+				7D563FA316E452B800BDD2DB /* HNAPISubmission.m in Sources */,
+				7D563FA416E452B800BDD2DB /* HNContainer.m in Sources */,
+				7D563FA516E452B800BDD2DB /* HNEntry.m in Sources */,
+				7D563FA616E452B800BDD2DB /* HNEntryList.m in Sources */,
+				7D563FA716E452B800BDD2DB /* HNObject.m in Sources */,
+				7D563FA816E452B800BDD2DB /* HNObjectBodyRenderer.m in Sources */,
+				7D563FA916E452B800BDD2DB /* HNObjectCache.m in Sources */,
+				7D563FAA16E452B800BDD2DB /* HNSession.m in Sources */,
+				7D563FAB16E452B800BDD2DB /* HNSessionAuthenticator.m in Sources */,
+				7D563FAC16E452B800BDD2DB /* HNSessionController.m in Sources */,
+				7D563FAD16E452B800BDD2DB /* HNSubmission.m in Sources */,
+				7D563FAE16E452B800BDD2DB /* HNUser.m in Sources */,
+				7D563FAF16E452B800BDD2DB /* XMLDocument.m in Sources */,
+				7D563FB016E452B800BDD2DB /* XMLElement.m in Sources */,
+				7D563FB316E4531700BDD2DB /* NSString+URLEncoding.m in Sources */,
+				7D563FB616E4532B00BDD2DB /* NSDictionary+Parameters.m in Sources */,
+				7D563FBA16E453D100BDD2DB /* UIApplication+ActivityIndicator.m in Sources */,
+				7D563FBE16E453E000BDD2DB /* NSString+Entities.m in Sources */,
+				7D563FBF16E453E000BDD2DB /* NSString+Tags.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7D563E5C16E4501E00BDD2DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7D563E5D16E4501E00BDD2DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D563E5F16E4501E00BDD2DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HNKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7D563E6016E4501E00BDD2DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HNKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D563E4B16E4501E00BDD2DB /* Build configuration list for PBXProject "HNKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D563E5C16E4501E00BDD2DB /* Debug */,
+				7D563E5D16E4501E00BDD2DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D563E5E16E4501E00BDD2DB /* Build configuration list for PBXNativeTarget "HNKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D563E5F16E4501E00BDD2DB /* Debug */,
+				7D563E6016E4501E00BDD2DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D563E4816E4501E00BDD2DB /* Project object */;
+}
