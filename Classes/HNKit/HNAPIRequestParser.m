@@ -389,7 +389,7 @@ typedef enum {
             }
         } else {
             for (XMLElement *element2 in [element children]) {
-                if ([[element2 tagName] isEqual:@"img"] && [[element2 attributeWithName:@"src"] hasSuffix:@"://ycombinator.com/images/s.gif"]) {
+                if ([[element2 tagName] isEqual:@"img"] && [[element2 attributeWithName:@"src"] isEqualToString:@"s.gif"]) {
                     // Yes, really: HN uses a 1x1 gif to indent comments. It's like 1999 all over again. :(
                     NSInteger width = [[element2 attributeWithName:@"width"] intValue];
                     // Each comment is "indented" by setting the width to "depth * 40", so divide to get the depth.
