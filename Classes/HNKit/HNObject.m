@@ -51,7 +51,8 @@
 + (NSURL *)generateURLWithIdentifier:(id)identifier_ infoDictionary:(NSDictionary *)info {
     NSDictionary *parameters = [self parametersForURLWithIdentifier:identifier_ infoDictionary:info];
     NSString *path = [self pathForURLWithIdentifier:identifier_ infoDictionary:info];
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", [kHNWebsiteURL absoluteString], path, [parameters queryString]]];
+    NSString *combined = [path stringByAppendingString:[parameters queryString]];
+    return [NSURL URLWithString:combined relativeToURL:kHNWebsiteURL];
 }
 
 + (id)session:(HNSession *)session objectWithIdentifier:(id)identifier_ infoDictionary:(NSDictionary *)info URL:(NSURL *)url_ {

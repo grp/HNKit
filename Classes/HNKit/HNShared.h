@@ -9,7 +9,7 @@
 
 #define kHNWebsiteHost @"news.ycombinator.com"
 #define kHNFAQURL [NSURL URLWithString:@"http://ycombinator.com/newsfaq.html"]
-#define kHNWebsiteURL [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/", kHNWebsiteHost]]
+#define kHNWebsiteURL [NSURL URLWithString:[NSString stringWithFormat:@"https://%@/", kHNWebsiteHost]]
 
 
 #define kHNSearchBaseURL @"http://api.thriftdb.com/api.hnsearch.com/items/_search?%@"

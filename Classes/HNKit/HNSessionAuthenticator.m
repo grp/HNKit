@@ -14,8 +14,6 @@
 
 #import "NSDictionary+Parameters.h"
 
-#define kHNLoginSubmissionURL [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [kHNWebsiteURL absoluteString], @"y"]]
-
 @implementation HNSessionAuthenticator
 @synthesize delegate;
 
@@ -68,8 +66,10 @@
 }
 
 - (NSURLRequest *)connection:(NSURLConnection *)connection_ willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response {
-    // XXX: is this necessary? can this cause a hang if it never has the right URL?
-    if ([[[request URL] absoluteString] hasSuffix:@"/y"]) return request;
+    if (response == nil) {
+        // not from a server redirect
+        return request;
+    }
 
     if (response != nil && [response isKindOfClass:[NSHTTPURLResponse class]]) {
         NSHTTPURLResponse *http = (NSHTTPURLResponse *) response;
@@ -99,21 +99,18 @@
     XMLDocument *document = [[[XMLDocument alloc] initWithHTMLData:data] autorelease];
     if (document == nil) return nil;
     
-    // XXX: this xpath is really ugly :(
-    XMLElement *element = [document firstElementMatchingPath:@"//table//tr[1]//table//tr//td//span[@class='pagetop']//a[text()='login']"];
+    XMLElement *element = [document firstElementMatchingPath:@"//span[@class='pagetop']//a[text()='login']"];
     return [element attributeWithName:@"href"];
 }
 
-- (NSString *)_generateLoginTokenWithForLoginPage:(NSString *)loginPage {
-    if (loginPage == nil) return nil;
-    
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [kHNWebsiteURL absoluteString], loginPage]];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    XMLDocument *document = [[[XMLDocument alloc] initWithHTMLData:data] autorelease];
-    if (document == nil) return nil;
-    
-    XMLElement *element = [document firstElementMatchingPath:@"//form//input[@name='fnid']"];
+- (NSString *)_loginTokenFromLoginDocument:(XMLDocument *)loginDocument {
+    XMLElement *element = [loginDocument firstElementMatchingPath:@"//form//input[@name='fnid']"];
     return [element attributeWithName:@"value"];
+}
+
+- (NSString *)_loginURLFromLoginDocument:(XMLDocument *)loginDocument {
+    XMLElement *element = [loginDocument firstElementMatchingPath:@"//form"];
+    return [element attributeWithName:@"action"];
 }
 
 - (void)_sendAuthenticationRequest:(NSURLRequest *)request {
@@ -125,11 +122,24 @@
 - (void)_performAuthentication {
     NSString *loginurl = nil;
     NSString *formfnid = nil;
+    NSString *submiturl = nil;
     
     loginurl = [self _generateLoginPageURL];
-    formfnid = [self _generateLoginTokenWithForLoginPage:loginurl];
-    
-    if (loginurl == nil || formfnid == nil) {
+
+    if (loginurl != nil) {
+        NSURL *url = [NSURL URLWithString:loginurl relativeToURL:kHNWebsiteURL];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        XMLDocument *document = [[XMLDocument alloc] initWithHTMLData:data];
+        
+        if (document != nil) {
+            formfnid = [self _loginTokenFromLoginDocument:document];
+            submiturl = [self _loginURLFromLoginDocument:document];
+        }
+
+        [document release];
+    }
+
+    if (loginurl == nil || formfnid == nil || submiturl == nil) {
         [self performSelectorOnMainThread:@selector(_failAuthentication) withObject:nil waitUntilDone:YES];
         return;
     }
@@ -139,8 +149,10 @@
         username, @"u",
         password, @"p",
     nil];
+
+    NSURL *submitURL = [NSURL URLWithString:submiturl relativeToURL:kHNWebsiteURL];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:kHNLoginSubmissionURL];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:submitURL];
     [request setHTTPMethod:@"POST"];
     [request setHTTPShouldHandleCookies:NO];
     
