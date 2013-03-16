@@ -91,9 +91,9 @@
 - (void)performRequestWithPath:(NSString *)path_ parameters:(NSDictionary *)parameters {
     path = [path_ copy];
     received = [[NSMutableData alloc] init];
-    
-    NSString *base = [NSString stringWithFormat:@"http://%@/%@%@", kHNWebsiteHost, path, [parameters queryString]];
-    NSURL *url = [NSURL URLWithString:base];
+
+    NSString *combined = [path stringByAppendingString:[parameters queryString]];
+    NSURL *url = [NSURL URLWithString:combined relativeToURL:kHNWebsiteURL];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [session addCookiesToRequest:request];
