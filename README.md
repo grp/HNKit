@@ -7,7 +7,7 @@ There isn't any documentation yet, but you can look at the [news:yc code](http:/
 ### Apps using HNKit
 
  - [news:yc](http://newsyc.me/)
- - *Maybe your's next? Submit a pull-request so I can add it!*
+ - *Maybe yours next? Submit a pull-request so I can add it!*
 
 ### License
 
