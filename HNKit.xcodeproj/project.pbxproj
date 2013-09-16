@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D0116CE17E7C17C00BA5044 /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0116CD17E7C17C00BA5044 /* NSDate+TimeAgo.m */; };
 		7D563E5416E4501E00BDD2DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D563E5316E4501E00BDD2DB /* Foundation.framework */; };
 		7D563F9C16E452B800BDD2DB /* NSObject+PerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F6F16E452B800BDD2DB /* NSObject+PerformSelector.m */; };
 		7D563F9D16E452B800BDD2DB /* NSString+RemoveSuffix.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D563F7116E452B800BDD2DB /* NSString+RemoveSuffix.m */; };
@@ -112,6 +113,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D0116CC17E7C17C00BA5044 /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
+		7D0116CD17E7C17C00BA5044 /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
 		7D563E5016E4501E00BDD2DB /* libHNKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHNKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D563E5316E4501E00BDD2DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7D563F6E16E452B800BDD2DB /* NSObject+PerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformSelector.h"; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 				7D563F7116E452B800BDD2DB /* NSString+RemoveSuffix.m */,
 				7D563F7216E452B800BDD2DB /* NSURL+Parameters.h */,
 				7D563F7316E452B800BDD2DB /* NSURL+Parameters.m */,
+				7D0116CC17E7C17C00BA5044 /* NSDate+TimeAgo.h */,
+				7D0116CD17E7C17C00BA5044 /* NSDate+TimeAgo.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				7D563F9E16E452B800BDD2DB /* NSURL+Parameters.m in Sources */,
 				7D563F9F16E452B800BDD2DB /* HNAnonymousSession.m in Sources */,
 				7D563FA016E452B800BDD2DB /* HNAPIRequest.m in Sources */,
+				7D0116CE17E7C17C00BA5044 /* NSDate+TimeAgo.m in Sources */,
 				7D563FA116E452B800BDD2DB /* HNAPIRequestParser.m in Sources */,
 				7D563FA216E452B800BDD2DB /* HNAPISearch.m in Sources */,
 				7D563FA316E452B800BDD2DB /* HNAPISubmission.m in Sources */,
@@ -440,6 +446,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/HNKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -451,6 +458,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/HNKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

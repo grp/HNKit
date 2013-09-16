@@ -7,6 +7,7 @@
 
 #import "HNAPISearch.h"
 #import "HNKit.h"
+#import "NSDate+TimeAgo.h"
 
 @class HNEntry;
 
@@ -19,6 +20,7 @@
 @synthesize responseData;
 @synthesize searchType;
 @synthesize session;
+@synthesize dateFormatter;
 
 - (id)initWithSession:(HNSession *)session_ {
 	if (self = [super init]) {
@@ -102,12 +104,20 @@
 	date = [rawDictionary valueForKey:@"create_ts"];
 	url = [rawDictionary valueForKey:@"url"];
 
+    if (self.dateFormatter == nil) {
+        self.dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+    }
+    NSDate *parsed_date = [dateFormatter dateFromString:date];
+    NSString *time_ago = [parsed_date timeAgoInWords];
+
 	if ((NSNull *)user != [NSNull null]) [item setObject:user forKey:@"user"];
 	if ((NSNull *)points != [NSNull null]) [item setObject:points forKey:@"points"];
 	if ((NSNull *)title != [NSNull null]) [item setObject:title forKey:@"title"];
 	if ((NSNull *)comments != [NSNull null]) [item setObject:comments forKey:@"numchildren"];
 	if ((NSNull *)url != [NSNull null]) [item setObject:url forKey:@"url"];
-	if ((NSNull *)date != [NSNull null]) [item setObject:date forKey:@"date"];
+	if ((NSNull *)time_ago != [NSNull null]) [item setObject:time_ago forKey:@"date"];
 	if ((NSNull *)body != [NSNull null]) [item setObject:body forKey:@"body"];
 	if ((NSNull *)identifier != [NSNull null]) [item setObject:identifier forKey:@"identifier"];
 	return item;
