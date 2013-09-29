@@ -25,6 +25,8 @@
 #import <Cocoa/Cocoa.h>
 #endif
 
+static const CGFloat HNObjectBodyRendererLinkColor[3] = {9.0 / 255.0, 33 / 255.0, 234 / 255.0};
+
 static CGFloat defaultFontSize = 13.0f;
 
 @implementation HNObjectBodyRenderer
@@ -144,7 +146,7 @@ static CGFloat defaultFontSize = 13.0f;
     CTFontRef fontSmallParagraphBreak = [self fontForFont:[UIFont systemFontOfSize:floorf(fontSize * 2.0f / 3.0f)]];
     
     CGColorRef colorBody = [[UIColor blackColor] CGColor];
-    CGColorRef colorLink = [[UIColor blueColor] CGColor];
+    CGColorRef colorLink = [[UIColor colorWithRed:HNObjectBodyRendererLinkColor[0] green:HNObjectBodyRendererLinkColor[1] blue:HNObjectBodyRendererLinkColor[2] alpha:1.0] CGColor];
 #else
     CTFontRef fontBody = [self fontForFont:[NSFont systemFontOfSize:fontSize]];
     CTFontRef fontCode = [self fontForFont:[NSFont fontWithName:@"Courier New" size:fontSize]];
@@ -152,13 +154,13 @@ static CGFloat defaultFontSize = 13.0f;
     CTFontRef fontSmallParagraphBreak = [self fontForFont:[NSFont systemFontOfSize:floorf(fontSize * 2.0f / 3.0f)]];
     
     CGColorRef colorBody = [[NSColor blackColor] CGColor];
-    CGColorRef colorLink = [[NSColor blueColor] CGColor];
+    CGColorRef colorLink = [[NSColor colorWithCalibratedRed:HNObjectBodyRendererLinkColor[0] green:HNObjectBodyRendererLinkColor[1] blue:HNObjectBodyRendererLinkColor[2] alpha:1.0] CGColor];
 #endif
     
     __block NSMutableAttributedString *bodyAttributed = [[NSMutableAttributedString alloc] init];
     __block NSMutableDictionary *currentAttributes = [NSMutableDictionary dictionary];
     
-    BOOL(^hasContent)() = ^BOOL () {
+    BOOL(^hasContent)() = ^BOOL {
         return [[[bodyAttributed string] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] != 0;
     };
         
