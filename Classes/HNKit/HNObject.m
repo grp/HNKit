@@ -52,7 +52,7 @@
     NSDictionary *parameters = [self parametersForURLWithIdentifier:identifier_ infoDictionary:info];
     NSString *path = [self pathForURLWithIdentifier:identifier_ infoDictionary:info];
     NSString *combined = [path stringByAppendingString:[parameters queryString]];
-    return [NSURL URLWithString:combined relativeToURL:kHNWebsiteURL];
+    return [[NSURL URLWithString:combined relativeToURL:kHNWebsiteURL] absoluteURL];
 }
 
 + (id)session:(HNSession *)session objectWithIdentifier:(id)identifier_ infoDictionary:(NSDictionary *)info URL:(NSURL *)url_ {

@@ -127,7 +127,7 @@
     loginurl = [self _generateLoginPageURL];
 
     if (loginurl != nil) {
-        NSURL *url = [NSURL URLWithString:loginurl relativeToURL:kHNWebsiteURL];
+        NSURL *url = [[NSURL URLWithString:loginurl relativeToURL:kHNWebsiteURL] absoluteURL];
         NSData *data = [NSData dataWithContentsOfURL:url];
         XMLDocument *document = [[XMLDocument alloc] initWithHTMLData:data];
         
@@ -150,7 +150,7 @@
         password, @"p",
     nil];
 
-    NSURL *submitURL = [NSURL URLWithString:submiturl relativeToURL:kHNWebsiteURL];
+    NSURL *submitURL = [[NSURL URLWithString:submiturl relativeToURL:kHNWebsiteURL] absoluteURL];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:submitURL];
     [request setHTTPMethod:@"POST"];

@@ -68,7 +68,7 @@
                 [submission body] ?: @"", @"x",
             nil];
 
-            [request setURL:[NSURL URLWithString:@"/r" relativeToURL:kHNWebsiteURL]];
+            [request setURL:[[NSURL URLWithString:@"/r" relativeToURL:kHNWebsiteURL] absoluteURL]];
             [request setHTTPMethod:@"POST"];
             [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
             [request setHTTPBody:[[[query queryString] substringFromIndex:1] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -98,7 +98,7 @@
                     [submission body], @"text",
                 nil];
                 
-                [request setURL:[NSURL URLWithString:@"/r" relativeToURL:kHNWebsiteURL]];
+                [[request setURL:[[NSURL URLWithString:@"/r" relativeToURL:kHNWebsiteURL] absoluteURL]];
                 [request setHTTPMethod:@"POST"];
                 [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
                 [request setHTTPBody:[[[query queryString] substringFromIndex:1] dataUsingEncoding:NSUTF8StringEncoding]];
