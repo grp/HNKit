@@ -15,12 +15,15 @@
 	NSMutableData *responseData;
 	NSMutableArray *entries;
 	HNSearchType searchType;
+
+    NSDateFormatter *dateFormatter;
 }
 
 @property (nonatomic, retain, readonly) HNSession *session;
 @property (nonatomic, retain) NSMutableArray *entries;
 @property (nonatomic, retain) NSMutableData *responseData;
 @property (nonatomic, assign) HNSearchType searchType;
+@property (nonatomic, retain) NSDateFormatter *dateFormatter;
 
 - (id)initWithSession:(HNSession *)session_;
 
