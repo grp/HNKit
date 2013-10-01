@@ -2,8 +2,9 @@
 //  NSDate+TimeAgo.m
 //  HNKit
 //
-//  By Rudy Jah Chan
+//  By Rudy Jahchan
 //  https://gist.github.com/rudyjahchan/1660134
+//  No copyright - released into public domain
 //
 
 #import "NSDate+TimeAgo.h"
@@ -39,7 +40,7 @@
             difference = round(seconds / 2592000);
             unit = @"month";
         } else {
-            difference = round(seconds / 2592000);
+            difference = round(seconds / 31557600);
             unit = @"year";
         }
 
