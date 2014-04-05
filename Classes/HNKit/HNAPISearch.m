@@ -131,9 +131,9 @@
 	NSString *paramsString = nil;
 	NSString *encodedQuery = [searchQuery stringByURLEncodingString];
 	if (searchType == kHNSearchTypeInteresting) {
-		paramsString = [NSString stringWithFormat:kHNSearchParams, encodedQuery];
+		paramsString = [NSString stringWithFormat:kHNSearchParamsInteresting, encodedQuery];
 	} else {
-		paramsString = [NSString stringWithFormat:kHNSearchParams, encodedQuery];
+		paramsString = [NSString stringWithFormat:kHNSearchParamsRecent, encodedQuery];
 	}
 
 	NSString *urlString = [NSString stringWithFormat:kHNSearchBaseURL, paramsString];
