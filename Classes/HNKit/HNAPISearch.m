@@ -62,12 +62,12 @@
 
 - (void)handleResponse {
 	id responseJSON = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:NULL];
-	NSArray *rawResults = [[NSArray alloc] initWithArray:[responseJSON objectForKey:@"results"]];
-
+	NSArray *rawResults = [[NSArray alloc] initWithArray:[responseJSON objectForKey:@"hits"]];
+    
 	self.entries = [NSMutableArray array];
-
+    
 	for (NSDictionary *result in rawResults) {
-		NSDictionary *item = [self itemFromRaw:[result objectForKey:@"item"]];
+		NSDictionary *item = [self itemFromRaw:result];
 		HNEntry *entry = [HNEntry session:session entryWithIdentifier:[item objectForKey:@"identifier"]];
 
 		[entry loadFromDictionary:item complete:NO];
@@ -98,19 +98,23 @@
 	points = [rawDictionary valueForKey:@"points"];
 	comments = [rawDictionary valueForKey:@"num_comments"];
 	title = [rawDictionary valueForKey:@"title"];
-	user = [rawDictionary valueForKey:@"username"];
-	identifier = [rawDictionary valueForKey:@"id"];
-	body = [rawDictionary valueForKey:@"text"];
-	date = [rawDictionary valueForKey:@"create_ts"];
+	user = [rawDictionary valueForKey:@"author"];
+	identifier = [rawDictionary valueForKey:@"objectID"];
+	body = [rawDictionary valueForKey:@"comment_text"];
+	date = [rawDictionary valueForKey:@"created_at"];
 	url = [rawDictionary valueForKey:@"url"];
 
 	if (self.dateFormatter == nil) {
 		self.dateFormatter = [[NSDateFormatter alloc] init];
 		[dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-		[dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+		[dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z"];
 	}
 	NSDate *parsedDate = [dateFormatter dateFromString:date];
 	NSString *timeAgo = [parsedDate timeAgoInWords];
+    
+    if (!timeAgo) {
+        timeAgo = @"";
+    }
 	
 	if ((NSNull *)user != [NSNull null]) [item setObject:user forKey:@"user"];
 	if ((NSNull *)points != [NSNull null]) [item setObject:points forKey:@"points"];
@@ -127,9 +131,9 @@
 	NSString *paramsString = nil;
 	NSString *encodedQuery = [searchQuery stringByURLEncodingString];
 	if (searchType == kHNSearchTypeInteresting) {
-		paramsString = [NSString stringWithFormat:kHNSearchParamsInteresting, encodedQuery];
+		paramsString = [NSString stringWithFormat:kHNSearchParams, encodedQuery];
 	} else {
-		paramsString = [NSString stringWithFormat:kHNSearchParamsRecent, encodedQuery];
+		paramsString = [NSString stringWithFormat:kHNSearchParams, encodedQuery];
 	}
 
 	NSString *urlString = [NSString stringWithFormat:kHNSearchBaseURL, paramsString];
