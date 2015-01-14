@@ -103,11 +103,6 @@
     return [element attributeWithName:@"href"];
 }
 
-- (NSString *)_loginTokenFromLoginDocument:(XMLDocument *)loginDocument {
-    XMLElement *element = [loginDocument firstElementMatchingPath:@"//form//input[@name='fnid']"];
-    return [element attributeWithName:@"value"];
-}
-
 - (NSString *)_loginURLFromLoginDocument:(XMLDocument *)loginDocument {
     XMLElement *element = [loginDocument firstElementMatchingPath:@"//form"];
     return [element attributeWithName:@"action"];
@@ -121,7 +116,6 @@
 
 - (void)_performAuthentication {
     NSString *loginurl = nil;
-    NSString *formfnid = nil;
     NSString *submiturl = nil;
     
     loginurl = [self _generateLoginPageURL];
@@ -132,22 +126,20 @@
         XMLDocument *document = [[XMLDocument alloc] initWithHTMLData:data];
         
         if (document != nil) {
-            formfnid = [self _loginTokenFromLoginDocument:document];
             submiturl = [self _loginURLFromLoginDocument:document];
         }
 
         [document release];
     }
 
-    if (loginurl == nil || formfnid == nil || submiturl == nil) {
+    if (loginurl == nil || submiturl == nil) {
         [self performSelectorOnMainThread:@selector(_failAuthentication) withObject:nil waitUntilDone:YES];
         return;
     }
     
     NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
-        formfnid, @"fnid",
-        username, @"u",
-        password, @"p",
+        username, @"acct",
+        password, @"pw",
     nil];
 
     NSURL *submitURL = [[NSURL URLWithString:submiturl relativeToURL:kHNWebsiteURL] absoluteURL];
