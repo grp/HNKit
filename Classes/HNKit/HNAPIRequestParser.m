@@ -19,6 +19,10 @@ typedef enum {
     kHNPageLayoutTypeExposed // <tr>[3:]
 } HNPageLayoutType;
 
+@interface HNAPIRequestParser()
+- (NSString *) captureWithRegexp: (NSString *) regex string: (NSString*)content index: (NSInteger)captureIndex;
+@end
+
 @implementation HNAPIRequestParser
 
 - (BOOL)stringIsProcrastinationError:(NSString *)string {
@@ -186,6 +190,23 @@ typedef enum {
     }
 }
 
+
+- (NSString *) captureWithRegexp: (NSString *) regex string: (NSString*)content index: (NSInteger)captureIndex {
+    NSRegularExpression *dateRegex = [NSRegularExpression regularExpressionWithPattern:regex
+                                                                               options: NSRegularExpressionCaseInsensitive
+                                                                                 error: nil];
+    NSArray * matches = [dateRegex matchesInString:content options:0 range:NSMakeRange(0, [content length])];
+    
+    for (NSTextCheckingResult *match in matches) {
+        if([match numberOfRanges] > captureIndex) {
+            NSRange matchRange = [match rangeAtIndex:captureIndex];
+            return [content substringWithRange:matchRange];
+        }
+    }
+    
+    return nil;
+}
+
 - (NSDictionary *)parseSubmissionWithElements:(NSArray *)elements {
     XMLElement *first = [elements objectAtIndex:0];
     XMLElement *second = [elements objectAtIndex:1];
@@ -224,14 +245,6 @@ typedef enum {
     
     for (XMLElement *element in [second children]) {
         if ([[element attributeWithName:@"class"] isEqual:@"subtext"]) {
-            NSString *content = [element content];
-            
-            // XXX: is there any better way of doing this?
-            NSInteger start = [content rangeOfString:@"</a> "].location;
-            if (start != NSNotFound) content = [content substringFromIndex:start + [@"</a> " length]];
-            NSInteger end = [content rangeOfString:@" ago"].location;
-            if (end != NSNotFound) date = [content substringToIndex:end];
-            
             for (XMLElement *element2 in [element children]) {
                 NSString *content = [element2 content];
                 NSString *tag = [element2 tagName];
@@ -241,8 +254,16 @@ typedef enum {
                         user = [content stringByRemovingHTMLTags];
                         user = [user stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                     } else if ([[element2 attributeWithName:@"href"] hasPrefix:@"item?id="]) {
-                        NSInteger end = [content rangeOfString:@" "].location;
-                        if (end != NSNotFound) comments = [NSNumber numberWithInt:[[content substringToIndex:end] intValue]];
+                        NSString *linkText = [element2 content];
+                        NSString *dateStr = [self captureWithRegexp:@"(\\d+.*) ago" string:linkText index:1];
+                        if (dateStr != nil) {
+                            date = dateStr;
+                        }
+
+                        NSString *commentsStr = [self captureWithRegexp:@"(\\d+) comments" string:linkText index:1];
+                        if(commentsStr != nil) {
+                            comments = [NSNumber numberWithInt:[commentsStr intValue]];
+                        }
                         
                         identifier = [NSNumber numberWithInt:[[[element2 attributeWithName:@"href"] substringFromIndex:[@"item?id=" length]] intValue]];
                     }
@@ -310,6 +331,8 @@ typedef enum {
     NSNumber *submission = nil;
     NSString *more = nil;
     
+
+    
     for (XMLElement *element in [comment children]) {
         if ([[element tagName] isEqual:@"tr"]) {
             comment = element;
@@ -362,12 +385,14 @@ typedef enum {
                                     if ([href hasPrefix:@"user?id="]) {
                                         user = [content stringByRemovingHTMLTags];
                                         user = [user stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-                                    } else if ([href hasPrefix:@"item?id="] && [content isEqual:@"link"]) {
-                                        identifier = [NSNumber numberWithInt:[[href substringFromIndex:[@"item?id=" length]] intValue]];
-                                    } else if ([href hasPrefix:@"item?id="] && [content isEqual:@"parent"]) {
-                                        parent = [NSNumber numberWithInt:[[href substringFromIndex:[@"item?id=" length]] intValue]];
                                     } else if ([href hasPrefix:@"item?id="]) {
                                         submission = [NSNumber numberWithInt:[[href substringFromIndex:[@"item?id=" length]] intValue]];
+                                        identifier = [NSNumber numberWithInt:[[href substringFromIndex:[@"item?id=" length]] intValue]];
+
+                                        NSString *dateStr = [self captureWithRegexp:@"(\\d+.*) ago" string:content index:1];
+                                        if (dateStr != nil) {
+                                            date = dateStr;
+                                        }
                                     }
                                 } else if ([tag isEqual:@"span"]) {
                                     NSInteger end = [content rangeOfString:@" "].location;
