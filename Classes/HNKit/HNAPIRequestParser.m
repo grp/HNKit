@@ -230,7 +230,7 @@ typedef enum {
             NSInteger start = [content rangeOfString:@"</a> "].location;
             if (start != NSNotFound) content = [content substringFromIndex:start + [@"</a> " length]];
             NSInteger end = [content rangeOfString:@" ago"].location;
-            if (end != NSNotFound) date = [content substringToIndex:end];
+            if (end != NSNotFound) date = [[content substringToIndex:end] stringByRemovingHTMLTags];
             
             for (XMLElement *element2 in [element children]) {
                 NSString *content = [element2 content];
@@ -243,7 +243,6 @@ typedef enum {
                     } else if ([[element2 attributeWithName:@"href"] hasPrefix:@"item?id="]) {
                         NSInteger end = [content rangeOfString:@" "].location;
                         if (end != NSNotFound) comments = [NSNumber numberWithInt:[[content substringToIndex:end] intValue]];
-                        
                         identifier = [NSNumber numberWithInt:[[[element2 attributeWithName:@"href"] substringFromIndex:[@"item?id=" length]] intValue]];
                     }
                 } else if ([tag isEqual:@"span"]) {
@@ -350,7 +349,7 @@ typedef enum {
                             NSInteger start = [content rangeOfString:@"</a> "].location;
                             if (start != NSNotFound) content = [content substringFromIndex:start + [@"</a> " length]];
                             NSInteger end = [content rangeOfString:@" ago"].location;
-                            if (end != NSNotFound) date = [content substringToIndex:end];
+                            if (end != NSNotFound) date = [[content substringToIndex:end] stringByRemovingHTMLTags];
                             
                             for (XMLElement *element4 in [element3 children]) {
                                 NSString *content = [element4 content];
@@ -362,7 +361,7 @@ typedef enum {
                                     if ([href hasPrefix:@"user?id="]) {
                                         user = [content stringByRemovingHTMLTags];
                                         user = [user stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-                                    } else if ([href hasPrefix:@"item?id="] && [content isEqual:@"link"]) {
+                                    } else if ([href hasPrefix:@"item?id="]) {
                                         identifier = [NSNumber numberWithInt:[[href substringFromIndex:[@"item?id=" length]] intValue]];
                                     } else if ([href hasPrefix:@"item?id="] && [content isEqual:@"parent"]) {
                                         parent = [NSNumber numberWithInt:[[href substringFromIndex:[@"item?id=" length]] intValue]];
