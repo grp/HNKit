@@ -227,17 +227,11 @@ typedef enum {
             NSString *content = [element content];
             
             // XXX: is there any better way of doing this?
-            // Yeah there is. It's called regex. -@b3ll
             NSInteger start = [content rangeOfString:@"</a> "].location;
             if (start != NSNotFound) content = [content substringFromIndex:start + [@"</a> " length]];
-
-            NSString *elementContent = [element content];
-            NSRange agoRange = [elementContent rangeOfString:@"ago</a>"];
-            NSString *beforeAgo = [elementContent substringToIndex:agoRange.location];
-            NSRange agoStartRange = [beforeAgo rangeOfString:@">" options:NSBackwardsSearch];
-            NSRange dateRange = NSMakeRange(NSMaxRange(agoStartRange), agoRange.location - agoStartRange.location + [@"ago" length] - 1);
-            date = [elementContent substringWithRange:dateRange];
-
+            NSInteger end = [content rangeOfString:@" ago"].location;
+            if (end != NSNotFound) date = [content substringToIndex:end];
+            
             for (XMLElement *element2 in [element children]) {
                 NSString *content = [element2 content];
                 NSString *tag = [element2 tagName];
